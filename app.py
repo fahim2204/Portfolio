@@ -1,6 +1,6 @@
 import os
 # arr = [279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279,279]
-for x in range(1):
+for x in range(4):
     d = '279 days ago'
     with open('file.txt','a') as file:
         file.write(d)
