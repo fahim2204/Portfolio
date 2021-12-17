@@ -1,7 +1,7 @@
 import os
 from random import randint
 
-d = '277 days ago'
+d = '274 days ago'
 with open('file.txt','a') as file:
     file.write(d)
 os.system('git add .')
