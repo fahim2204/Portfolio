@@ -1,5 +1,5 @@
 import os
-arr = [265,264,258,257,251,250]
+arr = [244,243,262,255]
 for x in arr:
     d = str(x)+' days ago'
     with open('file.txt','a') as file:

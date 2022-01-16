@@ -1,4 +1,3 @@
 # Portfolio
 A Portfolio of Fahim Faisal
-Chang
 
