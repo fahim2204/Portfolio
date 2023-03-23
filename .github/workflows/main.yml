@@ -12,6 +12,6 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ftp.fahimfaisal.net
-        username: cicd
+        username: cicd@fahimfaisal.net
         password: Mniff@CICD
         server-dir: /public_html/
