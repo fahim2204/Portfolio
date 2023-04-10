@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) {
 
   // Check if the email address is valid
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo `showAlert('Invalid email format!!', 'alert-danger')"`;
+    echo "showAlert('Invalid email format!!', 'alert-danger')";
     exit;
   }
 
@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
   $to = "fahimfaisal1998@gmail.com";
 
   // Set the email subject
-  $subject = "Message from your website: " . $name;
+  $subject = "Message from your website";
 
   // Set the email message
   $message_body = "Name: " . $name . "<br>" .
@@ -32,9 +32,9 @@ if (isset($_POST['submit'])) {
 
   // Send the email
   if (mail($to, $subject, $message_body, $headers)) {
-    echo `showAlert('Message sent successfully!!', 'alert-success')"`;
+    echo "showAlert('Message sent successfully!!', 'alert-success')";
   } else {
-    echo `showAlert('Failed to send message!!', 'alert-danger')"`;
+    echo "showAlert('Failed to send message!!', 'alert-danger')";
   }
 }
 
