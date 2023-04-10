@@ -1,24 +1,41 @@
 <?php
 if (isset($_POST['submit'])) {
+  // Validate form input
+  $name = filter_var($_POST['name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+  $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+  $message = filter_var($_POST['message'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+  // Check if the email address is valid
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "<script>alert('Invalid email format')</script>";
+    exit;
+  }
 
   // Set the recipient email address
   $to = "fahimfaisal1998@gmail.com";
 
   // Set the email subject
-  $subject = "Greetings from your website!";
+  $subject = "Message from your website: " . $name;
 
   // Set the email message
-  $message = "Name: " . $_POST['name'] . "<br>" .
-    "Email: " . $_POST['email'] . "<br>" .
-    "Message: " . $_POST['message'] . "<br>";
+  $message_body = "Name: " . $name . "<br>" .
+    "Email: " . $email . "<br>" .
+    "Message: " . $message . "<br>";
 
   // Set the email headers
-  $headers = "From: fahimfaisal.net <mail@fahimfaisal.net>" . "\r\n" .
-    "Reply-To: mail@fahimfaisal.net" . "\r\n" .
-    "X-Mailer: PHP/" . phpversion();
+  $headers = "From: Fahim Faisal <mail@fahimfaisal.net>" . "\r\n" .
+    "Reply-To: " . $name . " <" . $email . ">" . "\r\n" .
+    "X-Priority: 1 (Highest)" . "\r\n" .
+    "X-Mailer: PHP/" . phpversion() . "\r\n" .
+    "MIME-Version: 1.0" . "\r\n" .
+    "Content-type:text/html;charset=UTF-8" . "\r\n";
 
   // Send the email
-  mail($to, $subject, $message, $headers);
+  if (mail($to, $subject, $message_body, $headers)) {
+    echo "<script>alert('Message sent successfully')</script>";
+  } else {
+    echo "<script>alert('Failed to send message')</script>";
+  }
 }
 ?>
 
@@ -656,7 +673,7 @@ if (isset($_POST['submit'])) {
                 <textarea class="form-control" placeholder="Message *" rows="5" name="message" required></textarea>
               </div>
               <div class="form-group">
-                <button type="submit" class="form-control btn btn-primary">
+                <button type="submit" name="submit" class="form-control btn btn-primary">
                   Send Message
                 </button>
               </div>
