@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) {
 
   // Check if the email address is valid
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo "<script>alert('Invalid email format')</script>";
+    echo "<div class='alert alert-danger'>Invalid email format</div>";
     exit;
   }
 
@@ -32,11 +32,12 @@ if (isset($_POST['submit'])) {
 
   // Send the email
   if (mail($to, $subject, $message_body, $headers)) {
-    echo "<script>alert('Message sent successfully')</script>";
+    echo "<div class='alert alert-success'>Message sent successfully</div>";
   } else {
-    echo "<script>alert('Failed to send message')</script>";
+    echo "<div class='alert alert-danger'>Failed to send message</div>";
   }
 }
+
 ?>
 
 
@@ -71,6 +72,8 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+  <!-- For the alert form submission EMail -->
+  <div id="alert-container"></div>
   <header class="header">
     <div class="container">
       <ul class="social-icons pt-3">

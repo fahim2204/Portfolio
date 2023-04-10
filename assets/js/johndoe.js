@@ -148,3 +148,20 @@ function initMap() {
       ]
     });
 }
+
+
+let alertContainer = document.getElementById("alert-container");
+
+function showAlert(message, type) {
+  let alertDiv = document.createElement("div");
+  alertDiv.className = "alert " + type;
+  alertDiv.innerHTML = message;
+  alertContainer.appendChild(alertDiv);
+  alertDiv.classList.add("alert-show");
+  setTimeout(function() {
+    alertDiv.classList.remove("alert-show");
+    setTimeout(function() {
+      alertDiv.remove();
+    }, 300);
+  }, 3000);
+}
