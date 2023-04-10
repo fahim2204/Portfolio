@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) {
 
   // Check if the email address is valid
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo "showAlert('Invalid email format!!', 'alert-danger')";
+    echo "<script></script>showAlert('Invalid email format!!', 'alert-danger')</script>";
     exit;
   }
 
@@ -32,9 +32,9 @@ if (isset($_POST['submit'])) {
 
   // Send the email
   if (mail($to, $subject, $message_body, $headers)) {
-    echo "showAlert('Message sent successfully!!', 'alert-success')";
+    echo "<script>showAlert('Message sent successfully!!', 'alert-success')</script>";
   } else {
-    echo "showAlert('Failed to send message!!', 'alert-danger')";
+    echo "<script>showAlert('Failed to send message!!', 'alert-danger')</script>";
   }
 }
 
