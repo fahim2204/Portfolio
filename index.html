@@ -846,11 +846,12 @@
           <div class="col-lg-8">
             <div class="contact-form-card">
               <h4 class="contact-title">Send a message</h4>
-              <form action="">
+              <form action="/mail.php" method="post">
                 <div class="form-group">
                   <input
                     class="form-control"
                     type="text"
+                    name="name"
                     placeholder="Name *"
                     required
                   />
@@ -859,6 +860,7 @@
                   <input
                     class="form-control"
                     type="email"
+                    name="email"
                     placeholder="Email *"
                     required
                   />
@@ -868,6 +870,7 @@
                     class="form-control"
                     placeholder="Message *"
                     rows="5"
+                    name="message"
                     required
                   ></textarea>
                 </div>
