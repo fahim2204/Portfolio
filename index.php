@@ -645,7 +645,7 @@ if (isset($_POST['submit'])) {
         <div class="col-lg-8">
           <div class="contact-form-card">
             <h4 class="contact-title">Send a message</h4>
-            <form action="/mail.php" method="post">
+            <form action="/" method="post">
               <div class="form-group">
                 <input class="form-control" type="text" name="name" placeholder="Name *" required />
               </div>
