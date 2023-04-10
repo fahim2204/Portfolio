@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) {
 
   // Check if the email address is valid
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo "<div class='alert alert-danger'>Invalid email format</div>";
+    echo `showAlert('Invalid email format!!', 'alert-danger')"`;
     exit;
   }
 
@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
     "Message: " . $message . "<br>";
 
   // Set the email headers
-  $headers = "From: Fahim Faisal <mail@fahimfaisal.net>" . "\r\n" .
+  $headers = "From: fahimfaisal.net <mail@fahimfaisal.net>" . "\r\n" .
     "Reply-To: " . $name . " <" . $email . ">" . "\r\n" .
     "X-Priority: 1 (Highest)" . "\r\n" .
     "X-Mailer: PHP/" . phpversion() . "\r\n" .
@@ -32,9 +32,9 @@ if (isset($_POST['submit'])) {
 
   // Send the email
   if (mail($to, $subject, $message_body, $headers)) {
-    echo "<div class='alert alert-success'>Message sent successfully</div>";
+    echo `showAlert('Message sent successfully!!', 'alert-success')"`;
   } else {
-    echo "<div class='alert alert-danger'>Failed to send message</div>";
+    echo `showAlert('Failed to send message!!', 'alert-danger')"`;
   }
 }
 
