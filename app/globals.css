@@ -1,0 +1,161 @@
+@import "@heroui/styles";
+
+:root {
+  --font-body: "Avenir Next", "SF Pro Display", "Segoe UI", sans-serif;
+  --font-display: "Avenir Next Condensed", "Avenir Next", "SF Pro Display", "Segoe UI", sans-serif;
+  --background: #05070b;
+  --foreground: #f3f6fb;
+  --surface: rgba(10, 12, 18, 0.78);
+  --surface-strong: rgba(15, 18, 24, 0.96);
+  --muted: #99a3b3;
+  --line: rgba(255, 255, 255, 0.08);
+  --accent: #f97316;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(249, 115, 22, 0.12), transparent 24%),
+    radial-gradient(circle at top right, rgba(80, 98, 130, 0.14), transparent 26%),
+    linear-gradient(180deg, #05070b 0%, #080a10 48%, #0a0d14 100%);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.32;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 74%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.page-shell {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.2rem 0 4rem;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow);
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section-label::before {
+  content: "";
+  width: 2.4rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.eyebrow-link {
+  color: var(--muted);
+  transition: color 180ms ease;
+}
+
+.eyebrow-link:hover {
+  color: var(--foreground);
+}
+
+.project-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.7rem;
+}
+
+.project-frame img {
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+  transition: transform 260ms ease;
+}
+
+.project-card:hover .project-frame img {
+  transform: scale(1.04);
+}
+
+.grain-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.grain-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 0.5px, transparent 0.5px);
+  background-size: 8px 8px;
+  opacity: 0.08;
+}
+
+.hero-photo {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2rem;
+  background: linear-gradient(145deg, rgba(249, 115, 22, 0.18), rgba(26, 31, 43, 0.96));
+}
+
+.hero-photo::after {
+  content: "";
+  position: absolute;
+  inset: auto -12% -12% 24%;
+  height: 60%;
+  border-radius: 999px;
+  background: rgba(249, 115, 22, 0.12);
+  filter: blur(52px);
+}
+
+.hero-photo img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.footer-note {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 768px) {
+  .page-shell {
+    width: min(100% - 1rem, 1120px);
+    padding-bottom: 3rem;
+  }
+}
