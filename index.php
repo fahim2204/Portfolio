@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="title" content="Fahim Faisal - Full Stack Developer" />
   <meta name="description" content="Portfolio Website of Fahim Faisal" />
-  <meta name="keywords" content="Fahim Faisal, Fahim, Faisal, fahimfaisal1998@gmail.com, hi@fahimfaisal.net, AIUB, Developer, Frontend, Full Stack, Backend, fahim2204" />
+  <meta name="keywords" content="Fahim Faisal, Fahim, Faisal, fahimfaisal1998@gmail.com, fahimfaisal1998@gmail.com, AIUB, Developer, Frontend, Full Stack, Backend, fahim2204" />
   <meta name="robots" content="index, follow" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="language" content="English" />
@@ -131,7 +131,7 @@
         <ul class="mt40 info list-unstyled">
           <li>
             <span>Email</span>
-            : hi@fahimfaisal.net
+            : fahimfaisal1998@gmail.com
           </li>
           <li>
             <span>Phone</span>
@@ -665,7 +665,7 @@
                   <br />
                   <span class="text-muted">fahimfaisal1998@gmail.com</span>
                   <br />
-                  <span class="text-muted">hi@fahimfaisal.net</span>
+                  <span class="text-muted">fahimfaisal1998@gmail.com</span>
                 </h6>
               </div>
             </div>
